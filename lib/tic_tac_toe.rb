@@ -21,8 +21,13 @@ def input_to_index(user_input)
   board_index = user_input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, index, current_player)
   board[index] = current_player
+=======
+def move(board, index, token)
+  board[index] = token
+>>>>>>> 5359fecf6ef8840c011cf874abdf22aab103e090
 end
 
 def position_taken?(board, location)
@@ -30,7 +35,15 @@ def position_taken?(board, location)
 end
 
 def valid_move?(board, index)
+<<<<<<< HEAD
   index.between?(0,8) && !position_taken?(board, index)
+=======
+  if index.between?(0, 8) == true && position_taken?(board, index) == true
+    true
+  else 
+    false
+  end
+>>>>>>> 5359fecf6ef8840c011cf874abdf22aab103e090
 end
 
 def turn_count(board)
@@ -52,7 +65,11 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
+<<<<<<< HEAD
     move(board, index, current_player(board))
+=======
+    move(board, index)
+>>>>>>> 5359fecf6ef8840c011cf874abdf22aab103e090
     display_board(board)
   else
     turn(board)
@@ -93,6 +110,7 @@ def winner(board)
  end
 end
 
+<<<<<<< HEAD
 def play(board)
   until over?(board)
    turn(board)
@@ -103,4 +121,7 @@ def play(board)
     puts "Cat's Game!"
   end
 end
+=======
+
+>>>>>>> 5359fecf6ef8840c011cf874abdf22aab103e090
 
